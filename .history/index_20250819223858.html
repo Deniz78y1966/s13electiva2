@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello_World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .greeting {
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+            <div class="md:flex">
+                <div class="md:flex-shrink-0">
+                    <img src="https://placehold.co/400x600" 
+                         alt="Imagen abstracta de desarrollo web mostrando código en una pantalla con colores modernos azules y morados" 
+                         class="h-full w-full object-cover md:w-64">
+                </div>
+                <div class="p-8">
+                    <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold mb-1">Demo Application</div>
+                    <h1 class="greeting text-5xl font-bold text-gray-900 leading-tight mt-2">¡Hola Mundo!</h1>
+                    <p class="mt-4 text-gray-600">Bienvenido a mi primera aplicación web contenerizada con Docker.</p>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold text-gray-800">Tecnologías utilizadas:</h3>
+                        <div class="flex space-x-6 mt-4">
+                            <div class="tech-icons">
+                                <img src="https://placehold.co/60x60" alt="Logo de HTML5 mostrando el icono naranja característico" class="h-12">
+                                <p class="text-center text-xs mt-1">Html, Css, JavaScript and Docker as well</p>
+                            <!-- </div>
+                            <div class="tech-icons">
+                                <img src="https://placehold.co/60x60" alt="Logo de CSS3 mostrando el icono azul característico" class="h-12">
+                                <p class="text-center text-xs mt-1">CSS3</p>
+                            </div>
+                            <div class="tech-icons">
+                                <img src="https://placehold.co/60x60" alt="Logo de JavaScript mostrando el ícono amarillo con el texto JS" class="h-12">
+                                <p class="text-center text-xs mt-1">JavaScript</p>
+                            </div>
+                            <div class="tech-icons">
+                                <img src="https://placehold.co/60x60" alt="Logo de Docker mostrando el clásico contenedor azul con ballena" class="h-12">
+                                <p class="text-center text-xs mt-1">Docker</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <button id="animateBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                            Heeey World
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('animateBtn').addEventListener('click', function() {
+            const greeting = document.querySelector('.greeting');
+            greeting.style.animation = 'none';
+            setTimeout(() => {
+                greeting.style.animation = 'fadeIn 1.5s ease-in-out';
+            }, 10);
+
+            // Cambiar el saludo rotativamente
+            const greetings = ['¡Hola Mundo!', 'Hello World!', 'Bonjour le monde!', 'Hallo Welt!'];
+            const current = greeting.textContent;
+            const nextIndex = (greetings.indexOf(current) + 1) % greetings.length;
+            greeting.textContent = greetings[nextIndex];
+        })
+    </script>
+</body>
+</html>
